@@ -22,7 +22,7 @@
     <div class="title">
       <h1 class="header_heading">Admin</h1>
     </div>
-    <a href="home.html" class="btn">
+    <a href="/" class="btn">
       <span class="circle">
         <span class="arrow"></span>
         <span class="text">Back</span>
@@ -61,24 +61,32 @@
 
               <h3>Product info</h3>
             </div>
-            <form action="" method="post" class="product_form">
-              <div class=" flex product">
+            <form action="" method="post" enctype="multipart/form-data" class="product_form">
+              @csrf
+              <div class="flex product">
                 <label for="product_name"></label>
                 <input type="text" id="product_name" name="product_name" placeholder="product name">
+                {{-- add a required message --}}
+                @error('product_name')
+                    <p class="required_message">{{ $message }}</p>
+                @enderror
                 <textarea name="product_desc" id="product_desc" cols="30" rows="10"
                   placeholder="product description"></textarea>
               </div>
               <div class="flex product_size">
                 <p>Product size :</p>
                 <input type="number" min="0" id="product_width" name="product_width" placeholder="width">X
+               
                 <input type="number" min="0" id="product_hight" name="product_hight" placeholder="hight">
+                
               </div>
               <div class="flex product_price">
                 <p>Product price :</p>
                 <input type="number" min="0" id="product_price" name="product_price" placeholder="price">$
+                
               </div>
               <div class="flex">
-                <p>Product image: <small>!size shoulde be 200px x 200px</small></p> <input type="file">
+                <p>Product image: <small>!size shoulde be 200px x 200px</small></p> <input type="file" name="product_image">
               </div>
               <div class="artist_info">
                 <h3>Artist info</h3>
@@ -86,14 +94,15 @@
                 <div class="flex artist">
                   <label for="artist_name"></label>
                   <input type="text" id="artist_name" name="artist_name" placeholder="artist name">
-                  <p>Artist image: <small>!size shoulde be 200px x 200px</small></p> <input type="file">
+                  <p>Artist image: <small>!size shoulde be 200px x 200px</small></p> <input type="file" name="artist_image">
                 </div>
               </div>
               <div class="create_btn-div">
                 <button class="create_btn" type="submit">create product</button>
               </div>
             </form>
-          </div>
+           
+              </div>
           <div class="item orders" style="display: none;">
             <div class="item_info">
 

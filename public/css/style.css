@@ -39,6 +39,14 @@ body {
 section {
   position: relative;
 }
+/*==================REQUIRED MESSAGE==============*/
+.required_message p{
+  color: red;
+  font-size: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+/*==================END REQUIRED MESSAGE==============*/
 
 /*==================back btn==============*/
 .btn {

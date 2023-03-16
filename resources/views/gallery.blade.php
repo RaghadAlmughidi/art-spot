@@ -54,100 +54,24 @@
     </div>
 
     <section class="container gallery-cards">
+        @foreach ($products as $product)
         <div class="card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
             <div class="card-img">
-                <img src="./artSpot-img/Rectangle 41.png" alt="">
+                <img src="{{ asset('product_img/')."/".$product->product_image }}" alt="">
             </div>
             <div class="card-content flex">
                 <div class="card-text">
-                    <p>folow</p>
-                    <p>by : ren</p>
+                    <p>{{ $product->product_name }}</p>
+                    <p>by : {{ $product->artist_name }}</p>
                 </div>
                 <div class="card-price flex">
-                    <a href="#" class="price-text">200$</a>
+                    <a href="#" class="price-text">{{ $product->product_price }}$</a>
                     <i class="ri-shopping-cart-2-fill"></i>
                 </div>
             </div>
         </div>
-        <div class="card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-            <div class="card-img">
-                <img src="./artSpot-img/Rectangle 44.png" alt="">
-            </div>
-            <div class="card-content flex">
-                <div class="card-text">
-                    <p>city side</p>
-                    <p>by : jan</p>
-                </div>
-                <div class="card-price flex">
-                    <a href="#" class="price-text">200$</a>
-                    <i class="ri-shopping-cart-2-fill"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-            <div class="card-img">
-                <img src="./artSpot-img/Rectangle 47.png" alt="">
-            </div>
-            <div class="card-content flex">
-                <div class="card-text">
-                    <p>ist sea</p>
-                    <p>by : johan</p>
-                </div>
-                <div class="card-price flex">
-                    <a href="#" class="price-text">200$</a>
-                    <i class="ri-shopping-cart-2-fill"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-            <div class="card-img">
-                <img src="./artSpot-img/Rectangle 50.png" alt="">
-            </div>
-            <div class="card-content flex">
-                <div class="card-text">
-                    <p>street eye</p>
-                    <p>by : ken</p>
-                </div>
-                <div class="card-price flex">
-                    <a href="#" class="price-text">200$</a>
-                    <i class="ri-shopping-cart-2-fill"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-            <div class="card-img">
-                <img src="./artSpot-img/Rectangle 53.png" alt="">
-            </div>
-            <div class="card-content flex">
-                <div class="card-text">
-                    <p>solid women</p>
-                    <p>by : jan</p>
-                </div>
-                <div class="card-price flex">
-                    <a href="#" class="price-text">200$</a>
-                    <i class="ri-shopping-cart-2-fill"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-            <div class="card-img">
-                <img src="./artSpot-img/Rectangle 56.png" alt="">
-            </div>
-            <div class="card-content flex">
-                <div class="card-text">
-                    <p>hight</p>
-                    <p>by : dan</p>
-                </div>
-                <div class="card-price flex">
-                    <a href="#" class="price-text">200$</a>
-                    <i class="ri-shopping-cart-2-fill"></i>
-                </div>
-            </div>
-        </div>
+        @endforeach
+        
 
  
 

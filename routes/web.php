@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('gallery');
-});
-Route::get('/admin', function () {
-    return view('admin');
-});
+//to open the product's create form 
+Route::get('/admin', [ProductController::class, 'create']);
+//to store the product's info 
+Route::post('/admin', [ProductController::class, 'store']);
+
+//to show the products
+Route::get('/gallery', [ProductController::class, 'show']);
+
+
