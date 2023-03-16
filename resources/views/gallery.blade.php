@@ -65,7 +65,7 @@
                     <p>by : {{ $product->artist_name }}</p>
                 </div>
                 <div class="card-price flex">
-                    <a href="#" class="price-text">{{ $product->product_price }}$</a>
+                    <a href="{{route('art-details', $product->id)}}" class="price-text">{{ $product->product_price }}$</a>
                     <i class="ri-shopping-cart-2-fill"></i>
                 </div>
             </div>

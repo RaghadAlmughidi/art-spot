@@ -99,6 +99,12 @@ class ProductController extends Controller
         return view('gallery', ['products' => $products]);
     }
 
+    public function artDetail(product $products)
+    {
+        $products = Product::with('img')->where('id',$products)->first();
+        return view('art', ['products' => $products]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
