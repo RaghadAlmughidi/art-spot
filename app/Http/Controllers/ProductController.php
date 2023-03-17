@@ -99,9 +99,9 @@ class ProductController extends Controller
         return view('gallery', ['products' => $products]);
     }
 
-    public function artDetail(product $products)
+    public function artDetail(product $product)
     {
-        $products = Product::with('img')->where('id',$products)->first();
+        $products = Product::find($product)->first();
         return view('art', ['products' => $products]);
     }
 

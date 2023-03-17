@@ -23,4 +23,4 @@ Route::post('/admin', [ProductController::class, 'store']);
 Route::get('/gallery', [ProductController::class, 'show']);
 
 
-Route::get('/art/{id}', [ProductController::class, 'artDetail'])->name('art-details');
+Route::get('/art/{product}', [ProductController::class, 'artDetail'])->name('art-details');
